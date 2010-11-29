@@ -29,7 +29,7 @@ class List {
 		else tail = tail.next = new Node(x);
 	}
 	
-	public Iter<Fahrzeug> assoc() { 
+	public Iter getIterator() { 
 		return new ListIter();
 	}
 }

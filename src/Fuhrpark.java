@@ -47,5 +47,14 @@ public class Fuhrpark{
 		//TODO: remove Fahrzeug;
 	}
 	
+	public Fahrzeug getFahrzeug(Fahrzeug f){
+		List temp = this.getList(f);
+		Iter i = temp.getIterator();
+		while(i.hasNext()){
+			Fahrzeug tempF = (Fahrzeug) i.next();
+			if(tempF.getId() == f.getId()) return tempF;
+		}
+		return null;	
+	}
 	
 }
