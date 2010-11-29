@@ -87,9 +87,11 @@ public class Fuhrpark{
 				ret.append("Durchschnittlicher Verbrauch/km für Personentransporter: " + avgPersonen);
 				ret.append("\n");
 				ret.append("\n");
+				
+				break;
 			}
 			case 2:{
-				ret.append("Fall 1: Treibstoffverbrauch pro Kilometer mit Elektrokraftwägen: ");
+				ret.append("Fall 2: Treibstoffverbrauch pro Kilometer mit Elektrokraftwägen: ");
 				ret.append("\n");
 				double verbrauch = 0;
 				double km = 0;
@@ -128,12 +130,114 @@ public class Fuhrpark{
 				ret.append("\n");
 				ret.append("\n");
 				
+				break;
 			}
 			case 3:{
+				ret.append("Fall 3: Durchschnittliche Anzahl der Sitze pro Fahrzeug ");
+				ret.append("\n");
+				Fahrzeug tmpF;
+				Iter itE = elektro.getIterator();
+				Iter itV = verbrenner.getIterator();
+
+				double seats = 0;
+				double count = 0;
+				double avgSeats = 0;
+				double avgSeatsE = 0;
+				double seatsE = 0;
+				double countE = 0;
+				double avgSeatsV = 0;
+				double seatsV = 0;
+				double countV = 0;
+
+				while(itE.hasNext()){
+					tmpF = itE.next();
+
+					if(tmpF.getType() instanceof Personen){
+						Personen p = (Personen) tmpF.getType();
+						seatsE += p.getSeats();
+						countE++;
+					}
+				}
+				while(itV.hasNext()){
+					tmpF = itV.next();
+
+					if(tmpF.getType() instanceof Personen){
+						Personen p = (Personen) tmpF.getType();
+						seatsV += p.getSeats();
+						countV++;
+					}
+				}
 				
+				seats = seatsE + seatsV;
+				count = countE + countV;
+				avgSeats = seats/count;
+				
+				ret.append("Durchschnittliche Anzahl pro Fahrzeug: " + avgSeats);
+				ret.append("\n");
+				
+				avgSeatsV = seatsV/countV;
+				ret.append("Durchschnittliche Anzahl pro Fahrzeug bei Verbrennerfahrzeugen: " + avgSeatsV);
+				ret.append("\n");
+				
+				avgSeatsE = seatsE/countE;
+				ret.append("Durchschnittliche Anzahl pro Fahrzeug bei Elektrofahrzeugen: " + avgSeatsE);
+				ret.append("\n");
+				
+				break;
 			}
-			
+
 			case 4:{
+				ret.append("Fall 3: Durchschnittliche Größe der Ladefläche pro Fahrzeug ");
+				ret.append("\n");
+				Fahrzeug tmpF;
+				Iter itE = elektro.getIterator();
+				Iter itV = verbrenner.getIterator();
+
+				double load = 0;
+				double count = 0;
+				double avgLoad = 0;
+				double avgLoadE = 0;
+				double loadE = 0;
+				double countE = 0;
+				double avgLoadV = 0;
+				double loadV = 0;
+				double countV = 0;
+
+				while(itE.hasNext()){
+					tmpF = itE.next();
+
+					if(tmpF.getType() instanceof Lasten){
+						Lasten p = (Lasten) tmpF.getType();
+						loadE += p.getSize();
+						countE++;
+					}
+				}
+				while(itV.hasNext()){
+					tmpF = itV.next();
+
+					if(tmpF.getType() instanceof Lasten){
+						Lasten p = (Lasten) tmpF.getType();
+						loadV += p.getSize();
+						countV++;
+					}
+				}
+				
+				load = loadE + loadV;
+				count = countE + countV;
+				avgLoad = load/count;
+				
+				ret.append("Durchschnittliche Größe der Ladefläche: " + avgLoad);
+				ret.append("\n");
+				
+				avgLoadV = loadV/countV;
+				ret.append("Durchschnittliche Größe der Ladefläche bei Verbrennerfahrzeugen: " + avgLoadV);
+				ret.append("\n");
+				
+				avgLoadE = loadE/countE;
+				ret.append("Durchschnittliche Anzahl pro Fahrzeug bei Elektrofahrzeugen: " + avgLoadE);
+				ret.append("\n");
+				
+				break;
 				
 			}	
 		}
