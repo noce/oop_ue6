@@ -1,6 +1,6 @@
 public abstract class Fahrzeug{
-	private int km = 1;
-	private int verbrauch = 1;
+	private double km = 1;
+	private double verbrauch = 1;
 	private final int id;
 	private Befoerderung b;
 	
@@ -14,7 +14,7 @@ public abstract class Fahrzeug{
 		return id;
 	}
 	
-	public int getKm(){
+	public double getKm(){
 		return km;
 	}
 	
@@ -22,7 +22,7 @@ public abstract class Fahrzeug{
 		km += amount;
 	}
 	
-	public int getVerbrauch(){
+	public double getVerbrauch(){
 		return verbrauch;
 	}
 	

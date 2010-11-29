@@ -51,15 +51,15 @@ public class Fuhrpark{
 			case 1:{
 				ret.append("Fall 1: Treibstoffverbrauch pro Kilometer mit Verbrennungskraftwägen: ");
 				ret.append("\n");
-				int verbrauch = 0;
-				int km = 0;
-				int avgVerbrauch = 0;
-				int verbrauchLasten = 0;
-				int kmLasten = 0;
-				int avgLasten = 0;
-				int verbrauchPersonen = 0;
-				int kmPersonen = 0;
-				int avgPersonen = 0;
+				double verbrauch = 0;
+				double km = 0;
+				double avgVerbrauch = 0;
+				double verbrauchLasten = 0;
+				double kmLasten = 0;
+				double avgLasten = 0;
+				double verbrauchPersonen = 0;
+				double kmPersonen = 0;
+				double avgPersonen = 0;
 				Fahrzeug tmpF;
 				Iter it = verbrenner.getIterator();
 				while(it.hasNext()){
@@ -70,7 +70,6 @@ public class Fuhrpark{
 					if(tmpF.getType() instanceof  Lasten){
 						verbrauchLasten += verbrauch;
 						kmLasten += km;
-						System.out.println("verbrauch Lasten:" + verbrauchLasten);
 					}else if(tmpF.getType() instanceof  Personen){
 						verbrauchPersonen += verbrauch;
 						kmPersonen += km;	
@@ -87,10 +86,56 @@ public class Fuhrpark{
 				avgPersonen = verbrauchPersonen/kmPersonen;
 				ret.append("Durchschnittlicher Verbrauch/km für Personentransporter: " + avgPersonen);
 				ret.append("\n");
+				ret.append("\n");
 			}
 			case 2:{
+				ret.append("Fall 1: Treibstoffverbrauch pro Kilometer mit Elektrokraftwägen: ");
+				ret.append("\n");
+				double verbrauch = 0;
+				double km = 0;
+				double avgVerbrauch = 0;
+				double verbrauchLasten = 0;
+				double kmLasten = 0;
+				double avgLasten = 0;
+				double verbrauchPersonen = 0;
+				double kmPersonen = 0;
+				double avgPersonen = 0;
+				Fahrzeug tmpF;
+				Iter it = elektro.getIterator();
+				while(it.hasNext()){
+					tmpF = (Fahrzeug) it.next();
+					verbrauch += tmpF.getVerbrauch();
+					km += tmpF.getKm();
+					
+					if(tmpF.getType() instanceof  Lasten){
+						verbrauchLasten += verbrauch;
+						kmLasten += km;
+					}else if(tmpF.getType() instanceof  Personen){
+						verbrauchPersonen += verbrauch;
+						kmPersonen += km;	
+					}else System.out.println("ERROR: no Befoerderung defined!");
+				}
+				avgVerbrauch = verbrauch/km;
+				ret.append("Durchschnittlicher Verbrauch/km: " + avgVerbrauch);
+				ret.append("\n");
+				
+				avgLasten = verbrauchLasten/kmLasten;
+				ret.append("Durchschnittlicher Verbrauch/km für Lastentransporter: " + avgLasten);
+				ret.append("\n");
+				
+				avgPersonen = verbrauchPersonen/kmPersonen;
+				ret.append("Durchschnittlicher Verbrauch/km für Personentransporter: " + avgPersonen);
+				ret.append("\n");
+				ret.append("\n");
 				
 			}
+			case 3:{
+				
+			}
+			
+			case 4:{
+				
+			}	
 		}
 		return ret.toString();
 	}
