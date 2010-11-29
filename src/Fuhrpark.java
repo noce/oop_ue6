@@ -5,6 +5,14 @@ public class Fuhrpark{
 		this.id = id;
 	}
 	
+	//Personenbeförderung mit Elektromotor
+	private List persE = new List();
+	//Personenbeförderung mit Verbrennungsmotor
+	private List persV = new List();
+	//Lastenbeförderung mit Elektromotor
+	private List lastE = new List();
+	//Lastenbeförderung mit Verbrennungsmotor
+	private List lastV  = new List();
 	//mit Elektromotor
 	private List elektro = new List();
 	//mit Verbrennungsmotor
@@ -12,6 +20,24 @@ public class Fuhrpark{
 
 	
 	private List getList(Fahrzeug f){
+		if(f.getType() instanceof Personen){//Typ: Personen
+			if(f instanceof Elektromotor){
+				return persE;
+			}else if(f instanceof Verbrennungsmotor){
+				return persV;
+			}else{
+				System.out.println("ERROR: Type of Personen, but no Type of Elektro or Verbrenner");
+				return null;
+			}
+		}else if(f.getType() instanceof Lasten){//Typ: Lasten
+			if(f instanceof Elektromotor){
+				return lastE;
+			}else if(f instanceof Verbrennungsmotor){
+				return lastV;
+			}else{
+				System.out.println("ERROR: Type of Lasten, but no Type of Elektro or Verbrenner");
+				return null;
+			}
 		if(f instanceof Elektromotor){
 			return elektro;
 		}else if(f instanceof Verbrennungsmotor){
