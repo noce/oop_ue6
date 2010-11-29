@@ -1,4 +1,5 @@
 
-public class Elektromotor {
+public class Elektromotor extends Fahrzeug{
+
 
 }

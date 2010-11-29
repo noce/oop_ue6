@@ -1,4 +1,5 @@
 
-public class VerbrennungsMotor {
+public class VerbrennungsMotor extends Fahrzeug {
+	
 
 }
