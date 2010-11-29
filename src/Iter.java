@@ -1,6 +1,6 @@
-public interface Iter<A>{
+public interface Iter{
 	
-	public A next();
+	public Fahrzeug next();
 	
 	public boolean hasNext();
 	

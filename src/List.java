@@ -11,7 +11,7 @@ class List {
 	protected Node head = null; 
 	protected Node tail = null; 
 
-	protected class ListIter implements Iter<Fahrzeug>{
+	protected class ListIter implements Iter{
 		protected Node p = head; 
 		public Fahrzeug next() { 
 			if (p == null) return null;

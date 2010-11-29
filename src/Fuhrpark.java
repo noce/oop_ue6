@@ -70,10 +70,10 @@ public class Fuhrpark{
 					if(tmpF.getType() instanceof  Lasten){
 						verbrauchLasten += verbrauch;
 						kmLasten += km;
+						System.out.println("verbrauch Lasten:" + verbrauchLasten);
 					}else if(tmpF.getType() instanceof  Personen){
 						verbrauchPersonen += verbrauch;
-						kmPersonen += km;
-						
+						kmPersonen += km;	
 					}else System.out.println("ERROR: no Befoerderung defined!");
 				}
 				avgVerbrauch = verbrauch/km;
@@ -81,18 +81,18 @@ public class Fuhrpark{
 				ret.append("\n");
 				
 				avgLasten = verbrauchLasten/kmLasten;
-				ret.append("Durchschnittlicher Verbrauch/km für Lastentransporter " + avgLasten);
+				ret.append("Durchschnittlicher Verbrauch/km für Lastentransporter: " + avgLasten);
 				ret.append("\n");
 				
 				avgPersonen = verbrauchPersonen/kmPersonen;
-				ret.append("Durchschnittlicher Verbrauch/km für Personentransporter " + avgPersonen);
+				ret.append("Durchschnittlicher Verbrauch/km für Personentransporter: " + avgPersonen);
 				ret.append("\n");
 			}
 			case 2:{
 				
 			}
 		}
-		return null;
+		return ret.toString();
 	}
 	
 }
