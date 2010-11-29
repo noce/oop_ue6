@@ -1,5 +1,5 @@
 
 public interface Befoerderung {
 
-	public String isType();
+	public String getType();
 }

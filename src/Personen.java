@@ -7,7 +7,7 @@ public class Personen implements Befoerderung {
 		this.seats = seats;
 	}
 	
-	public String isType(){
+	public String getType(){
 		return "Personen";
 	}
 	

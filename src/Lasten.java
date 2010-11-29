@@ -7,7 +7,7 @@ public class Lasten implements Befoerderung{
 		this.sizeOfLoadingSpace = sizeOfLoadingSpace;
 	}
 	
-	public String isType(){
+	public String getType(){
 		return "Lasten";
 	}
 	
