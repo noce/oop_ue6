@@ -5,13 +5,13 @@ public class Fuhrpark{
 		this.id = id;
 	}
 	
-	//Personenbeförderung mit Elektromotor
+	//Personenbefï¿½rderung mit Elektromotor
 	private List persE = new List();
-	//Personenbeförderung mit Verbrennungsmotor
+	//Personenbefï¿½rderung mit Verbrennungsmotor
 	private List persV = new List();
-	//Lastenbeförderung mit Elektromotor
+	//Lastenbefï¿½rderung mit Elektromotor
 	private List lastE = new List();
-	//Lastenbeförderung mit Verbrennungsmotor
+	//Lastenbefï¿½rderung mit Verbrennungsmotor
 	private List lastV  = new List();
 	
 	private List getList(Fahrzeug f){
@@ -46,7 +46,4 @@ public class Fuhrpark{
 	public void removeFahrzeug(Fahrzeug f){
 		//TODO: remove Fahrzeug;
 	}
->>>>>>> a200602a653270530c0ad05c8efb6a9304f75693:src/Fuhrpark.java
-	
-	
 }
