@@ -5,36 +5,19 @@ public class Fuhrpark{
 		this.id = id;
 	}
 	
-	//Personenbeförderung mit Elektromotor
-	private List persE = new List();
-	//Personenbeförderung mit Verbrennungsmotor
-	private List persV = new List();
-	//Lastenbeförderung mit Elektromotor
-	private List lastE = new List();
-	//Lastenbeförderung mit Verbrennungsmotor
-	private List lastV  = new List();
+	//mit Elektromotor
+	private List elektro = new List();
+	//mit Verbrennungsmotor
+	private List verbrenner = new List();
+
 	
 	private List getList(Fahrzeug f){
-		if(f.getType() instanceof Personen){//Typ: Personen
-			if(f instanceof Elektromotor){
-				return persE;
-			}else if(f instanceof Verbrennungsmotor){
-				return persV;
-			}else{
-				System.out.println("ERROR: Type of Personen, but no Type of Elektro or Verbrenner");
-				return null;
-			}
-		}else if(f.getType() instanceof Lasten){//Typ: Lasten
-			if(f instanceof Elektromotor){
-				return lastE;
-			}else if(f instanceof Verbrennungsmotor){
-				return lastV;
-			}else{
-				System.out.println("ERROR: Type of Lasten, but no Type of Elektro or Verbrenner");
-				return null;
-			}
+		if(f instanceof Elektromotor){
+			return elektro;
+		}else if(f instanceof Verbrennungsmotor){
+			return verbrenner;
 		}else{
-			System.out.println("ERROR: no Type of Personen or Lasten");
+			System.out.println("ERROR: not in Elektro neither in Verbrenner");
 			return null;
 		}
 	}
@@ -55,6 +38,61 @@ public class Fuhrpark{
 			if(tempF.getId() == f.getId()) return tempF;
 		}
 		return null;	
+	}
+	
+	public String statistics(int i){
+		StringBuffer ret = new StringBuffer();
+		
+		ret.append("------------------- Statistik ------------------- ");
+		ret.append("\n");
+		ret.append("\n");
+		
+		switch(i){
+			case 1:{
+				ret.append("Fall 1: Treibstoffverbrauch pro Kilometer mit Verbrennungskraftwägen: ");
+				ret.append("\n");
+				int verbrauch = 0;
+				int km = 0;
+				int avgVerbrauch = 0;
+				int verbrauchLasten = 0;
+				int kmLasten = 0;
+				int avgLasten = 0;
+				int verbrauchPersonen = 0;
+				int kmPersonen = 0;
+				int avgPersonen = 0;
+				Fahrzeug tmpF;
+				Iter it = verbrenner.getIterator();
+				while(it.hasNext()){
+					tmpF = (Fahrzeug) it.next();
+					verbrauch += tmpF.getVerbrauch();
+					km += tmpF.getKm();
+					
+					if(tmpF.getType() instanceof  Lasten){
+						verbrauchLasten += verbrauch;
+						kmLasten += km;
+					}else if(tmpF.getType() instanceof  Personen){
+						verbrauchPersonen += verbrauch;
+						kmPersonen += km;
+						
+					}else System.out.println("ERROR: no Befoerderung defined!");
+				}
+				avgVerbrauch = verbrauch/km;
+				ret.append("Durchschnittlicher Verbrauch/km: " + avgVerbrauch);
+				ret.append("\n");
+				
+				avgLasten = verbrauchLasten/kmLasten;
+				ret.append("Durchschnittlicher Verbrauch/km für Lastentransporter " + avgLasten);
+				ret.append("\n");
+				
+				avgPersonen = verbrauchPersonen/kmPersonen;
+				ret.append("Durchschnittlicher Verbrauch/km für Personentransporter " + avgPersonen);
+				ret.append("\n");
+			}
+			case 2:{
+				
+			}
+		}
+		return null;
 	}
 	
 }
