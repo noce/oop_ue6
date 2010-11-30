@@ -1,8 +1,12 @@
-public class Fuhrpark{
+public class Fuhrpark implements IdAdmin{
 	private final String id;
 	
 	public Fuhrpark(String id){
 		this.id = id;
+	}
+	
+	public String getId(){
+		return id;
 	}
 	
 	//mit Elektromotor
@@ -14,7 +18,7 @@ public class Fuhrpark{
 	private List getList(Fahrzeug f){
 		if(f instanceof Elektromotor){
 			return elektro;
-		}else if(f instanceof Verbrennungsmotor){
+		}else if(f instanceof VerbrennungsMotor){
 			return verbrenner;
 		}else{
 			System.out.println("ERROR: not in Elektro neither in Verbrenner");
@@ -28,8 +32,13 @@ public class Fuhrpark{
 	
 	public void removeFahrzeug(Fahrzeug f){
 		if(f instanceof Elektromotor) elektro.removeNode(f);
-		else if(f instanceof Verbrennungsmotor) verbrenner.removeNode(f);
+		else if(f instanceof VerbrennungsMotor) verbrenner.removeNode(f);
 		else System.out.println("ERROR: when removing - not an instance of elektro or verbrenner");
+	}
+	
+	public void removeFahrzeugById(Object id){
+		elektro.removeNodeById(id);
+		verbrenner.removeNodeById(id);
 	}
 	
 	public Fahrzeug getFahrzeug(Fahrzeug f){
@@ -51,7 +60,7 @@ public class Fuhrpark{
 		
 		switch(i){
 			case 1:{
-				ret.append("Fall 1: Treibstoffverbrauch pro Kilometer mit Verbrennungskraftwägen: ");
+				ret.append("Fall 1: Treibstoffverbrauch pro Kilometer mit Verbrennungskraftwï¿½gen: ");
 				ret.append("\n");
 				double verbrauch = 0;
 				double km = 0;
@@ -82,18 +91,18 @@ public class Fuhrpark{
 				ret.append("\n");
 				
 				avgLasten = verbrauchLasten/kmLasten;
-				ret.append("Durchschnittlicher Verbrauch/km für Lastentransporter: " + avgLasten);
+				ret.append("Durchschnittlicher Verbrauch/km fï¿½r Lastentransporter: " + avgLasten);
 				ret.append("\n");
 				
 				avgPersonen = verbrauchPersonen/kmPersonen;
-				ret.append("Durchschnittlicher Verbrauch/km für Personentransporter: " + avgPersonen);
+				ret.append("Durchschnittlicher Verbrauch/km fï¿½r Personentransporter: " + avgPersonen);
 				ret.append("\n");
 				ret.append("\n");
 				
 				break;
 			}
 			case 2:{
-				ret.append("Fall 2: Treibstoffverbrauch pro Kilometer mit Elektrokraftwägen: ");
+				ret.append("Fall 2: Treibstoffverbrauch pro Kilometer mit Elektrokraftwï¿½gen: ");
 				ret.append("\n");
 				double verbrauch = 0;
 				double km = 0;
@@ -124,11 +133,11 @@ public class Fuhrpark{
 				ret.append("\n");
 				
 				avgLasten = verbrauchLasten/kmLasten;
-				ret.append("Durchschnittlicher Verbrauch/km für Lastentransporter: " + avgLasten);
+				ret.append("Durchschnittlicher Verbrauch/km fï¿½r Lastentransporter: " + avgLasten);
 				ret.append("\n");
 				
 				avgPersonen = verbrauchPersonen/kmPersonen;
-				ret.append("Durchschnittlicher Verbrauch/km für Personentransporter: " + avgPersonen);
+				ret.append("Durchschnittlicher Verbrauch/km fï¿½r Personentransporter: " + avgPersonen);
 				ret.append("\n");
 				ret.append("\n");
 				
@@ -152,7 +161,7 @@ public class Fuhrpark{
 				double countV = 0;
 
 				while(itE.hasNext()){
-					tmpF = itE.next();
+					tmpF = (Fahrzeug)itE.next();
 
 					if(tmpF.getType() instanceof Personen){
 						Personen p = (Personen) tmpF.getType();
@@ -161,7 +170,7 @@ public class Fuhrpark{
 					}
 				}
 				while(itV.hasNext()){
-					tmpF = itV.next();
+					tmpF = (Fahrzeug)itV.next();
 
 					if(tmpF.getType() instanceof Personen){
 						Personen p = (Personen) tmpF.getType();
@@ -189,7 +198,7 @@ public class Fuhrpark{
 			}
 
 			case 4:{
-				ret.append("Fall 3: Durchschnittliche Größe der Ladefläche pro Fahrzeug ");
+				ret.append("Fall 3: Durchschnittliche Grï¿½ï¿½e der Ladeflï¿½che pro Fahrzeug ");
 				ret.append("\n");
 				Fahrzeug tmpF;
 				Iter itE = elektro.getIterator();
@@ -206,7 +215,7 @@ public class Fuhrpark{
 				double countV = 0;
 
 				while(itE.hasNext()){
-					tmpF = itE.next();
+					tmpF = (Fahrzeug)itE.next();
 
 					if(tmpF.getType() instanceof Lasten){
 						Lasten p = (Lasten) tmpF.getType();
@@ -215,7 +224,7 @@ public class Fuhrpark{
 					}
 				}
 				while(itV.hasNext()){
-					tmpF = itV.next();
+					tmpF = (Fahrzeug)itV.next();
 
 					if(tmpF.getType() instanceof Lasten){
 						Lasten p = (Lasten) tmpF.getType();
@@ -228,11 +237,11 @@ public class Fuhrpark{
 				count = countE + countV;
 				avgLoad = load/count;
 				
-				ret.append("Durchschnittliche Größe der Ladefläche: " + avgLoad);
+				ret.append("Durchschnittliche Grï¿½ï¿½e der Ladeflï¿½che: " + avgLoad);
 				ret.append("\n");
 				
 				avgLoadV = loadV/countV;
-				ret.append("Durchschnittliche Größe der Ladefläche bei Verbrennerfahrzeugen: " + avgLoadV);
+				ret.append("Durchschnittliche Grï¿½ï¿½e der Ladeflï¿½che bei Verbrennerfahrzeugen: " + avgLoadV);
 				ret.append("\n");
 				
 				avgLoadE = loadE/countE;

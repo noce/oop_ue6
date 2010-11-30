@@ -8,17 +8,16 @@ public class FuhrparkUtil {
 	public static String addFuhrpark(List fuhrparks) {
 		String newName = "Fuhrpark" + fuhrparkIDCounter++;
 		//fuegt fuhrpark zur liste hinzu
-		//TODO: add in list implementieren
-		fuhrparks.add(new Fuhrpark(newName));
+		fuhrparks.addNode(new Fuhrpark(newName));
 		return newName;
 	}
 	
 	private static Fuhrpark findFuhrparkID(List fuhrparks, String fuhrparkID) {
-		//TODO: iterator in list implementieren
-		for(Fuhrpark fp: fuhrparks){
-			//TODO: getID() in fuhrpark implementieren
-			if(fuhrparkID.equals(fp.getID()){
-				return fp;
+		Iter iter = fuhrparks.getIterator();
+		while(iter.hasNext()){
+			Fuhrpark next = (Fuhrpark)iter.next();
+			if(fuhrparkID.equals(next.getId())){
+				return next;
 			}
 		}
 		return null;
@@ -49,24 +48,22 @@ public class FuhrparkUtil {
 	/*
 	 * delete specified Fuhrpark
 	 */
-	public static void clearFuhrpark(List fuhrparks, String fuhrparkID) throws IllegalArgumentException {
+	public static void deleteFuhrpark(List fuhrparks, String fuhrparkID) throws IllegalArgumentException {
 		if(fuhrparkID == null){
 			throw new IllegalArgumentException("Fuhrpark not found");
 		}
-		//TODO: remove fuhrpark in fuhrpark implementieren
-		fuhrparks.removeFuhrpark(fuhrparkID);
+		fuhrparks.removeNode(new Fuhrpark(fuhrparkID));
 	}
 	
 	/*
 	 * delete specified Fahrzeug
 	 */
-	public static void clearFahrzeug(List fuhrparks, String fuhrparkID, int fahrzeugID) throws IllegalArgumentException{
+	public static void deleteFahrzeug(List fuhrparks, String fuhrparkID, int fahrzeugID) throws IllegalArgumentException{
 		Fuhrpark fp = findFuhrparkID(fuhrparks, fuhrparkID);
 		if(fuhrparkID == null){
 			throw new IllegalArgumentException("Fuhrpark not found");
 		}
-		//TODO: removeFahrzeug implementieren
-		fp.removeFahrzeug(fahrzeugID);
+		fp.removeFahrzeugById(fahrzeugID);
 	}
 	
 	//TODO: aendern der information zu einigen fahrzeugen

@@ -1,9 +1,7 @@
-import java.util.List;
-import java.util.ArrayList;
 
 public class Test {
 	
-	private static List<Fuhrpark> fuhrparks = new ArrayList<Fuhrpark>();
+	private static List fuhrparks = new List();
 	private static int fahrzeugIDCounter = 1;
 	
 	public static void main(String args[]){

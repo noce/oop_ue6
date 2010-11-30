@@ -1,9 +1,9 @@
 class List {
 	protected class Node { 
-		Fahrzeug elem; 
+		IdAdmin elem; 
 		Node next = null;
 
-		Node (Fahrzeug elem){ 
+		Node (IdAdmin elem){ 
 			this.elem = elem; 
 		}
 
@@ -14,9 +14,9 @@ class List {
 
 	protected class ListIter implements Iter{
 		protected Node p = head; 
-		public Fahrzeug next() { 
+		public IdAdmin next() { 
 			if (p == null) return null;
-			Fahrzeug elem = p.elem;
+			IdAdmin elem = p.elem;
 			p = p.next;
 			return elem;
 		}
@@ -25,28 +25,32 @@ class List {
 		}
 	}
 	
-	public void addNode (Fahrzeug x) {
+	public void addNode (IdAdmin x) {
 		if (head == null) tail = head = new Node(x);
 		else tail = tail.next = new Node(x);
 	}
 	
-	public void removeNode(Fahrzeug x){
+	public void removeNode(IdAdmin x){
+		removeNodeById(x.getId());
+	}
+	
+	public Iter getIterator() { 
+		return new ListIter();
+	}
+	
+	public void removeNodeById(Object id){
 		Node prevNode = head;
 		Node thisNode = head;
 		boolean check = true;
 
 		while(prevNode.next != null && check == true){
 
-			if(thisNode.elem.getId() == x.getId()){
+			if(thisNode.elem.getId().equals(id)){
 				prevNode.next = thisNode.next;
 				check = false;
 			}
 			prevNode = thisNode;
 			thisNode = thisNode.next;
 		}
-	}
-	
-	public Iter getIterator() { 
-		return new ListIter();
 	}
 }

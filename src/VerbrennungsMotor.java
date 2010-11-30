@@ -1,7 +1,7 @@
 
-public class Verbrennungsmotor extends Fahrzeug {
+public class VerbrennungsMotor extends Fahrzeug {
 	
-	public Verbrennungsmotor(int id){
+	public VerbrennungsMotor(int id){
 		super(id);
 	}
 }

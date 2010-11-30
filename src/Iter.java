@@ -1,6 +1,6 @@
 public interface Iter{
 	
-	public Fahrzeug next();
+	public Object next();
 	
 	public boolean hasNext();
 	

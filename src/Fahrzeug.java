@@ -1,4 +1,4 @@
-public abstract class Fahrzeug{
+public abstract class Fahrzeug implements IdAdmin{
 	private double km = 1;
 	private double verbrauch = 1;
 	private final int id;
@@ -16,7 +16,7 @@ public abstract class Fahrzeug{
 	}
 	
 	
-	public int getId(){
+	public Integer getId(){
 		return id;
 	}
 	
