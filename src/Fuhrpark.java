@@ -27,7 +27,9 @@ public class Fuhrpark{
 	}
 	
 	public void removeFahrzeug(Fahrzeug f){
-		//TODO: remove Fahrzeug;
+		if(f instanceof Elektromotor) elektro.removeNode(f);
+		else if(f instanceof Verbrennungsmotor) verbrenner.removeNode(f);
+		else System.out.println("ERROR: when removing - not an instance of elektro or verbrenner");
 	}
 	
 	public Fahrzeug getFahrzeug(Fahrzeug f){

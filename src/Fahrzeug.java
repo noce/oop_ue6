@@ -5,10 +5,16 @@ public abstract class Fahrzeug{
 	private Befoerderung b;
 	
 	
-	//TODO überladender Konstruktor zum setzen von km & verbrauch ??
 	public Fahrzeug(int id){
 		this.id = id;
 	}
+	
+	public Fahrzeug(int id, double km, double verbrauch){
+		this.id = id;
+		this.km = km;
+		this.verbrauch = verbrauch;
+	}
+	
 	
 	public int getId(){
 		return id;
@@ -32,7 +38,6 @@ public abstract class Fahrzeug{
 	
 	public void setType(Befoerderung b){
 		this.b = b;
-
 	}
 	
 	public Befoerderung getType(){
