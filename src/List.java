@@ -1,4 +1,4 @@
-//List für Fuhrparks und Fahrzeuge in Fuhrpark
+//List fuer Fuhrparks und Fahrzeuge in Fuhrpark
 class List {
 	//inv: elem
 	protected class Node { 
