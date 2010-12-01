@@ -277,13 +277,13 @@ public class Fuhrpark implements IdAdmin{
 		int countV = 0;
 		
 		while(iterE.hasNext()){
-			Fahrzeug tempF = (Fahrzeug) iterE.next();
+			iterE.next();
 			countE++;
 		}
 		ret.append(countE + "x");
 		ret.append("Elektrokraftwaegen: " + "\n");
 		while(iterV.hasNext()){
-			Fahrzeug tempF = (Fahrzeug) iterV.next();
+			iterV.next();
 			countV++;
 		}
 		ret.append(countV + "x");
