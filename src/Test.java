@@ -138,7 +138,7 @@ public class Test {
 		
 		
 		/*
-		 * sitzplatzanzahl ändern
+		 * sitzplatzanzahl aendern
 		 * 
 		 */
 		System.out.println("Vor Veraenderung der Sitzplatzanzahl");
