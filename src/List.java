@@ -53,4 +53,8 @@ class List {
 			thisNode = thisNode.next;
 		}
 	}
+	
+	public String toString(){
+		return "";
+	}
 }

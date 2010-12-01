@@ -43,4 +43,8 @@ public abstract class Fahrzeug implements IdAdmin{
 	public Befoerderung getType(){
 		return b;
 	}
+	
+	public String toString(){
+		return "Fahrzeug: " + getId();
+	}
 }
