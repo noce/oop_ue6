@@ -127,7 +127,7 @@ public class Test {
 		 * Erhoehung und Auslesung des Treibstoff- bzw. Stromverbrauchs eines Fahrzeugs
 		 */
 		
-		System.out.println("Vor Erhöhung des Stromverbrauches");
+		System.out.println("Vor Erhoehung des Stromverbrauches");
 		System.out.println(FuhrparkUtil.findFuhrparkID(fuhrparks, fuhrpark2).statistics(2));
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 6).increaseVerbrauch(150);
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 7).increaseVerbrauch(200);
@@ -136,7 +136,35 @@ public class Test {
 		System.out.println("Nach Erhoehung des Antrieb-Verbrauchs der Fahrzeuge 6, 7, 8 betraegt der aktuelle Treibstoff- bzw. Stromverbrauch:");
 		System.out.println(FuhrparkUtil.findFuhrparkID(fuhrparks, fuhrpark2).statistics(2));
 		
-
+		
+		/*
+		 * sitzplatzanzahl ändern
+		 * 
+		 */
+		System.out.println("Vor Veraenderung der Sitzplatzanzahl");
+		System.out.println(FuhrparkUtil.findFuhrparkID(fuhrparks, fuhrpark3).statistics(3));
+		Befoerderung b1 = new  Personen(8);
+		Befoerderung b2 = new  Personen(7);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 11).setType(b1);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 13).setType(b2);
+		
+		System.out.println("Sitzplatzanzahl bei Fahrzeug 11 & 13 erhoeht");
+		System.out.println(FuhrparkUtil.findFuhrparkID(fuhrparks, fuhrpark3).statistics(3));
+		
+		
+		/*
+		 * Ladeflaeche veraendern
+		 */
+		System.out.println("Vor Veraenderung der Ladeflaeche");
+		
+		System.out.println(FuhrparkUtil.findFuhrparkID(fuhrparks, fuhrpark2).statistics(4));
+		Befoerderung b3 = new Lasten(1, 50);
+		Befoerderung b4 = new Lasten(2, 70);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).setType(b3);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 9).setType(b4);
+		
+		System.out.println("Ladeflaeche bei Fahrzeug 8&9 verkleinert");
+		System.out.println(FuhrparkUtil.findFuhrparkID(fuhrparks, fuhrpark2).statistics(4));
 		
 	}
 }
