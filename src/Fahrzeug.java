@@ -45,6 +45,7 @@ public abstract class Fahrzeug implements IdAdmin{
 	}
 	
 	public String toString(){
-		return "Fahrzeug: " + getId();
+		return "FahrzeugID: " + getId() + ", Typ: " + getType() + ", km-Stand: " + getKm() + ", Treibstoff-/Stromverbrauch: "
+				+ getVerbrauch();
 	}
 }
