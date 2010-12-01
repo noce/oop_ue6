@@ -71,7 +71,6 @@ public class Fuhrpark implements IdAdmin{
 
 		ret.append("------------------- Statistik ------------------- ");
 		ret.append("\n");
-		ret.append("\n");
 
 		switch(i){
 		case 1:{
@@ -117,7 +116,7 @@ public class Fuhrpark implements IdAdmin{
 			break;
 		}//end case1
 		case 2:{
-			ret.append("Fall 2: Treibstoffverbrauch pro Kilometer mit Elektrokraftwagen: ");
+			ret.append("Fall 2: Stromverbrauch pro Kilometer mit Elektrokraftwagen: ");
 			ret.append("\n");
 			double verbrauch = 0;
 			double km = 0;

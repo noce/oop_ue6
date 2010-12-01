@@ -99,10 +99,6 @@ public class Test {
 		System.out.println("Nach Erhoehung des km-Standes der Fahrzeuge 6, 7, 8 betraegt der aktuelle km-Stand:");
 		System.out.println(FuhrparkUtil.findFuhrparkID(fuhrparks, fuhrpark2).statistics(1));
 
-		System.out.println("Fahzeug 8 zu Lastenfahrzeug machen und kilometerstand erhoehen");
-		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).setType(new Lasten(8, 700));
-		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).increaseKm(600);
-		System.out.println(FuhrparkUtil.findFuhrparkID(fuhrparks, fuhrpark2).statistics(1));
 		
 		/*
 		 * Erhoehung und Auslesung des Treibstoff- bzw. Stromverbrauchs eines Fahrzeugs
@@ -114,7 +110,7 @@ public class Test {
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 7).increaseVerbrauch(200);
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).increaseVerbrauch(200);
 		
-		System.out.println("Nach Erhoehung des Antrieb-Verbrauchs der Fahrzeuge 6, 7, 8 betraegt der aktuelle Treibstoff- bzw. Stromverbrauch:");
+		System.out.println("Nach Erhoehung des Verbrauchs der Fahrzeuge 6, 7, 8 betraegt der Stromverbrauch:");
 		System.out.println(FuhrparkUtil.findFuhrparkID(fuhrparks, fuhrpark2).statistics(2));
 		
 		
