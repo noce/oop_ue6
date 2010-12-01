@@ -84,7 +84,8 @@ public class Test {
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).setType(new Lasten(8, 700));
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 9).setType(new Lasten(15, 1550));
 		
-		System.out.println("Aenderung der Befoerderungsart der Fahrzeuge 8&9 zu Lastenfahrzeugen 7, 9");
+		System.out.println("Aenderung der Befoerderungsart der Fahrzeuge 8&9 zu Lastenfahrzeugen");
+		System.out.println();
 
 		
 		/*
