@@ -50,6 +50,21 @@ public class Fuhrpark implements IdAdmin{
 		}
 		return null;	
 	}
+	
+	public Fahrzeug getFahrzeugById(int fahrzeugId){
+		Iter iterE = elektro.getIterator();
+		Iter iterV = verbrenner.getIterator();
+		boolean found = false;
+		while(iterE.hasNext() && !found){
+			Fahrzeug tempF = (Fahrzeug) iterE.next();
+			if(tempF.getId() == fahrzeugId) return tempF;
+		}
+		while(iterV.hasNext() && !found){
+			Fahrzeug tempF = (Fahrzeug) iterV.next();
+			if(tempF.getId() == fahrzeugId) return tempF;
+		}
+		return null;	
+	}
 
 	public String statistics(int i){
 		StringBuffer ret = new StringBuffer();

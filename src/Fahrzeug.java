@@ -2,7 +2,7 @@ public abstract class Fahrzeug implements IdAdmin{
 	private double km = 1;
 	private double verbrauch = 1;
 	private final int id;
-	private Befoerderung b;
+	private Befoerderung b = new Personen(5); //ist wenn nicht festgelegt, ein PKW
 	
 	
 	public Fahrzeug(int id){

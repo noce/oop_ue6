@@ -3,6 +3,7 @@ public class Test {
 	
 	private static List fuhrparks = new List();
 	private static int fahrzeugIDCounter = 1;
+	private static int fuhrparkIDCounter = 1;
 	
 	//TODO: pre und postcond sowie inv schreiben
 	//TODO: typ von befoerderung auf lasten aendern und umgekehrt
@@ -20,7 +21,7 @@ public class Test {
 			System.out.println(iter.next());
 		}
 	}
-	
+
 	public static void main(String args[]){
 		
 		/*Tasks:
@@ -30,9 +31,13 @@ public class Test {
 		 * -statistische Werte aller Fuhrparks berechenen
 		 */
 		
+		
+		
+		
 		/*
 		 * neue fuhrparks erstellen
 		 */
+
 		String fuhrpark1 = FuhrparkUtil.addFuhrpark(fuhrparks);
 		String fuhrpark2 = FuhrparkUtil.addFuhrpark(fuhrparks);
 		String fuhrpark3 = FuhrparkUtil.addFuhrpark(fuhrparks);
@@ -89,19 +94,21 @@ public class Test {
 		/*
 		 * Erhoehung und Auslesung des Kilometerstandes eines Fahrzeugs
 		 */
-		FuhrparkUtil.increaseKm(6, 220);
-		FuhrparkUtil.increaseKm(6, 80);
-		FuhrparkUtil.increaseKm(7, 600);
-		FuhrparkUtil.increaseKm(8, 900);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 6).increaseKm(220);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 6).increaseKm(80);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 7).increaseKm(600);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).increaseKm(900);
+
 		System.out.println("Nach Erhoehung des km-Standes der Fahrzeuge 6, 7, 8 betraegt der aktuelle km-Stand:");
 		printFuhrparkListe(fuhrparks);
 		
 		/*
 		 * Erhoehung und Auslesung des Treibstoff- bzw. Stromverbrauchs eines Fahrzeugs
 		 */
-		FuhrparkUtil.increaseFuelConsumption(fuhrparks, 6, 150);
-		FuhrparkUtil.increaseFuelConsumption(fuhrparks, 7, 200);
-		FuhrparkUtil.increaseFuelConsumption(fuhrparks, 8, 200);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 6).increaseVerbrauch(150);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 7).increaseVerbrauch(200);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).increaseVerbrauch(200);
+		
 		System.out.println("Nach Erhoehung des Antrieb-Verbrauchs der Fahrzeuge 6, 7, 8 betraegt der aktuelle Treibstoff- bzw. Stromverbrauch:");
 		printFuhrparkListe(fuhrparks);
 		
@@ -109,8 +116,9 @@ public class Test {
 		 * Aenderung der Befoerderungsart (Personen bzw. Lasten)
 		 * (Informationen ueber fruehere Einsaetze gehen verloren)
 		 */
-		FuhrparkUtil.changeFunction(fuhrparks, 7);
-		FuhrparkUtil.changeFunction(fuhrparks, 8);
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 7).setType(new Lasten(8, 700));
+		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).setType(new Lasten(15, 1550));
+
 		System.out.println("Nach Aenderung der Befoerderungsart der Fahrzeuge 7, 8:");
 		printFuhrparkListe(fuhrparks);
 		

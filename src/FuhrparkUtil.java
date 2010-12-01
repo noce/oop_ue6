@@ -66,31 +66,15 @@ public class FuhrparkUtil {
 		}
 		fp.removeFahrzeugById(fahrzeugID);
 	}
-	/*
+
 	public static Fahrzeug getFahrzeugFromFuhrparkList(List fuhrparks , int fahrzeugId){
 		Iter iter = fuhrparks.getIterator();
 		while(iter.hasNext()){
-			Fuhrpark next = (Fuhrpark)iter.next();
-//			if(next.getFahrzeug(fahrzeugId) != null) return next.getFahrzeug(fahrzeugId);
-			
+			Fuhrpark curFp = (Fuhrpark)iter.next();
+			if(curFp.getFahrzeugById(fahrzeugId) != null) return curFp.getFahrzeugById(fahrzeugId);
 		}
-	}*/
-	
-	//TODO: aendern der information zu einigen fahrzeugen
-	//info: zu einem zeitpunkt wird ein fahrzeug fuer hoechstens 1 art von aufgabe eingesetzt
-	public static void changeFunction(List fuhrparks, int fahrzeugID){
-		//fahrzeug setType()
+		return null;
 	}
-	
-	//TODO: erhoehung d kilometerstandes
-	public static void increaseKm(int fahrzeugID, int km){
-		//verwende methoden von fahrzeug
-	}
-	
-	//TODO: erhoehung d Treibstoff- /Stromverbrauchs (liter bzw. kwh)
-	public static void increaseFuelConsumption(List fuhrparks, int fahrzeugID, int amount){
-		
-	}
-	
+
 	
 }
