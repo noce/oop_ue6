@@ -1,6 +1,6 @@
 
 public interface IdAdmin {
 	
-	//fuer strings und ints
+	//post: object returned is whether int or Sting
 	public Object getId();
 }

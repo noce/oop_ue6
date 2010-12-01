@@ -2,13 +2,14 @@ public abstract class Fahrzeug implements IdAdmin{
 	private double km = 1;
 	private double verbrauch = 1;
 	private final int id;
-	private Befoerderung b = new Personen(5); //ist wenn nicht festgelegt, ein PKW
+	//Befoerderung ist, wenn nicht festgelegt, ein PKW mit 5 Sitzen
+	private Befoerderung b = new Personen(5); 
 	
-	
+	//inv: id
 	public Fahrzeug(int id){
 		this.id = id;
 	}
-	
+
 	public Fahrzeug(int id, double km, double verbrauch){
 		this.id = id;
 		this.km = km;
@@ -35,11 +36,12 @@ public abstract class Fahrzeug implements IdAdmin{
 	public void increaseVerbrauch(int amount){
 		verbrauch += amount;
 	}
-	
+	//pre: Befoerderung has to be whether Lasten or Personen
 	public void setType(Befoerderung b){
 		this.b = b;
 	}
 	
+	//post: Befoerderung is whether Lasten or Personen
 	public Befoerderung getType(){
 		return b;
 	}
