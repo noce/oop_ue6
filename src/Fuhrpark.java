@@ -14,7 +14,9 @@ public class Fuhrpark implements IdAdmin{
 	//mit Verbrennungsmotor
 	private List verbrenner = new List();
 
-
+	//param f = elektromotor: return list of elektrofahrzeuge (post)
+	//param f = verbrennungsmotor: return list of benzinfahrzeuge (post)
+	//sonst return null (post)
 	private List getList(Fahrzeug f){
 		if(f instanceof Elektromotor){
 			return elektro;
@@ -26,21 +28,31 @@ public class Fuhrpark implements IdAdmin{
 		}
 	}
 
+	//post: fahrzeug f hinzugefuegt
 	public void addFahrzeug(Fahrzeug f){
 		this.getList(f).addNode(f);
 	}
 
-	public void removeFahrzeug(Fahrzeug f){
-		if(f instanceof Elektromotor) elektro.removeNode(f);
-		else if(f instanceof VerbrennungsMotor) verbrenner.removeNode(f);
-		else System.out.println("ERROR: when removing - not an instance of elektro or verbrenner");
+	//post: fahrzeug f removed; falls fahrzeug f nicht existiert, dann IAE
+	public void removeFahrzeug(Fahrzeug f) throws IllegalArgumentException{
+		if(f instanceof Elektromotor) {
+			elektro.removeNode(f);
+		}
+		else if(f instanceof VerbrennungsMotor){
+			verbrenner.removeNode(f);
+		}
+		else {
+			throw new IllegalArgumentException("ERROR: when removing - not an instance of elektro or verbrenner");
+		}
 	}
 
+	//post: fahrzeug removed by id; 
 	public void removeFahrzeugById(Object id){
 		elektro.removeNodeById(id);
 		verbrenner.removeNodeById(id);
 	}
 
+	//post: return specified fahrzeug; falls f nicht in der liste, return null
 	public Fahrzeug getFahrzeug(Fahrzeug f){
 		List temp = this.getList(f);
 		Iter i = temp.getIterator();
@@ -51,6 +63,7 @@ public class Fuhrpark implements IdAdmin{
 		return null;	
 	}
 	
+	//post: return fahrzeug by fahrzeug id; if not existent: return null
 	public Fahrzeug getFahrzeugById(int fahrzeugId){
 		Iter iterE = elektro.getIterator();
 		Iter iterV = verbrenner.getIterator();
@@ -65,7 +78,8 @@ public class Fuhrpark implements IdAdmin{
 		}
 		return null;	
 	}
-
+	
+	//post: return statistics with avg data of fahrzeug
 	public String statistics(int i){
 		StringBuffer ret = new StringBuffer();
 
@@ -269,6 +283,7 @@ public class Fuhrpark implements IdAdmin{
 		return ret.toString();
 	}//end public String statistics
 	
+	//post: return all fahrzeuge as string
 	public String printFahrzeuge(){
 		StringBuffer ret = new StringBuffer();
 		Iter iterE = elektro.getIterator();
@@ -292,6 +307,7 @@ public class Fuhrpark implements IdAdmin{
 		return ret.toString();
 	}
 	
+	//post: return fuhrparkIDs as string
 	public String toString(){
 		return "Fuhrpark: " + getId(); 
 	}
