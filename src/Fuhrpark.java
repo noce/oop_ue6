@@ -270,6 +270,29 @@ public class Fuhrpark implements IdAdmin{
 		return ret.toString();
 	}//end public String statistics
 	
+	public String printFahrzeuge(){
+		StringBuffer ret = new StringBuffer();
+		Iter iterE = elektro.getIterator();
+		Iter iterV = verbrenner.getIterator();
+		int countE = 0;
+		int countV = 0;
+		
+		while(iterE.hasNext()){
+			Fahrzeug tempF = (Fahrzeug) iterE.next();
+			countE++;
+		}
+		ret.append(countE + "x");
+		ret.append("Elektrokraftwägen: " + "\n");
+		while(iterV.hasNext()){
+			Fahrzeug tempF = (Fahrzeug) iterV.next();
+			countV++;
+		}
+		ret.append(countV + "x");
+		ret.append("Verbrennungskraftwaegen: " + "\n");
+		
+		return ret.toString();
+	}
+	
 	public String toString(){
 		return "Fuhrpark: " + getId(); 
 	}

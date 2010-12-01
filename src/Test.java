@@ -78,17 +78,21 @@ public class Test {
 		System.out.println("Folgende Fuhrparks sind vorhanden:");
 		printFuhrparkListe(fuhrparks);
 		
-		FuhrparkUtil.deleteFuhrpark(fuhrparks, fuhrpark1);
 		FuhrparkUtil.deleteFuhrpark(fuhrparks, fuhrpark5);
-		System.out.println("Nach Entfernen von Fuhrpark 5 und 1 sind noch folgende Fuhrparks vorhanden:");
+		System.out.println("Nach Entfernen von Fuhrpark 5 sind noch folgende Fuhrparks vorhanden:");
 		printFuhrparkListe(fuhrparks);
 		
-		FuhrparkUtil.deleteFahrzeug(fuhrparks, fuhrpark4, 20);
-		FuhrparkUtil.deleteFahrzeug(fuhrparks, fuhrpark4, 17);
-		FuhrparkUtil.deleteFahrzeug(fuhrparks, fuhrpark3, 13);
+		
+		System.out.println("Anzahl der Fahrzeuge im Fuhrpark4:");
+		System.out.println(FuhrparkUtil.findFuhrparkID(fuhrparks, fuhrpark4).printFahrzeuge());
+		
+		FuhrparkUtil.deleteFahrzeug(fuhrparks, fuhrpark4, 20);//den kann man entfernen, die anderen nicht
+		FuhrparkUtil.deleteFahrzeug(fuhrparks, fuhrpark4, 21);
+		FuhrparkUtil.deleteFahrzeug(fuhrparks, fuhrpark4, 23);
 		
 		System.out.println("Nach Entfernen der Fahrzeuge 13, 17, 20:");
-		printFuhrparkListe(fuhrparks);
+		System.out.println(FuhrparkUtil.findFuhrparkID(fuhrparks, fuhrpark4).printFahrzeuge());
+		
 		
 		/*
 		 * Erhoehung und Auslesung des Kilometerstandes eines Fahrzeugs
@@ -100,7 +104,7 @@ public class Test {
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).increaseKm(900);
 
 		System.out.println("Nach Erhoehung des km-Standes der Fahrzeuge 6, 7, 8 betraegt der aktuelle km-Stand:");
-		printFuhrparkListe(fuhrparks);
+
 		
 		/*
 		 * Erhoehung und Auslesung des Treibstoff- bzw. Stromverbrauchs eines Fahrzeugs
@@ -110,7 +114,7 @@ public class Test {
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).increaseVerbrauch(200);
 		
 		System.out.println("Nach Erhoehung des Antrieb-Verbrauchs der Fahrzeuge 6, 7, 8 betraegt der aktuelle Treibstoff- bzw. Stromverbrauch:");
-		printFuhrparkListe(fuhrparks);
+
 		
 		/*
 		 * Aenderung der Befoerderungsart (Personen bzw. Lasten)
@@ -120,7 +124,7 @@ public class Test {
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).setType(new Lasten(15, 1550));
 
 		System.out.println("Nach Aenderung der Befoerderungsart der Fahrzeuge 7, 8:");
-		printFuhrparkListe(fuhrparks);
+
 		
 	}
 }

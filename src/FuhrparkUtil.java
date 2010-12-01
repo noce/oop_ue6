@@ -12,7 +12,7 @@ public class FuhrparkUtil {
 		return newName;
 	}
 	
-	private static Fuhrpark findFuhrparkID(List fuhrparks, String fuhrparkID) {
+	public static Fuhrpark findFuhrparkID(List fuhrparks, String fuhrparkID) {
 		Iter iter = fuhrparks.getIterator();
 		while(iter.hasNext()){
 			Fuhrpark next = (Fuhrpark)iter.next();
