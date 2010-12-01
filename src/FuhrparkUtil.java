@@ -58,7 +58,6 @@ public class FuhrparkUtil {
 	/*
 	 * delete specified Fahrzeug
 	 */
-	//TODO: ev. noch exc schmeissen falls fahrzeugID nicht vorhanden bzw. schon geloescht
 	public static void deleteFahrzeug(List fuhrparks, String fuhrparkID, int fahrzeugID) throws IllegalArgumentException{
 		Fuhrpark fp = findFuhrparkID(fuhrparks, fuhrparkID);
 		if(fuhrparkID == null){

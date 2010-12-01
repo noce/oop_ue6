@@ -4,17 +4,6 @@ public class Test {
 	private static List fuhrparks = new List();
 	private static int fahrzeugIDCounter = 1;
 
-	
-	//TODO: pre und postcond sowie inv schreiben
-	//TODO: typ von befoerderung auf lasten aendern und umgekehrt
-	//TODO: sichtbarkeiten und typsicherheiten
-	//TODO: !!WICHTIG: vorher in fuhrpark ansehen, was da lofo da genau implementiert hat
-	//		 - falls des funzt, brauchst keine statistik auswertungen mehr schreiben (nurmehr testen)
-	
-	//TODO: print mit ausgabe der fahrzeuge zu den fuhrparks, mit ausgabe ob elektro, od verbrennungsmotor
-	//		und kilometerstand sowie treibstoff- bzw stromverbrauch
-	//		personenbefoerderung: anz d sitzplaetze (inkl fahrer)
-	//		lastenbefoerderung: groesse d ladeflaeche (in qm) und hoechst zulaessige zuladung (in kg)
 	private static void printFuhrparkListe(List fuhrparks){
 		Iter iter = fuhrparks.getIterator();
 		while(iter.hasNext()){
@@ -23,14 +12,6 @@ public class Test {
 	}
 
 	public static void main(String args[]){
-		
-		/*Tasks:
-		 * -Fahrzeuge zu Fuhrparks hinzufuegen
-		 * -einige Fahrzeuge entfernen
-		 * -aendern der Informationen zu einzelnen Fahrzeugen
-		 * -statistische Werte aller Fuhrparks berechenen
-		 */
-
 		
 		/*
 		 * neue fuhrparks erstellen
