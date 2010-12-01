@@ -1,8 +1,8 @@
 public class TestLofo{
 	public static void main(String args[]){
 		Fuhrpark fuhrpark = new Fuhrpark("klo");
-		Fahrzeug f1 = new Verbrennungsmotor(1);
-		Fahrzeug f2 = new Verbrennungsmotor(2);
+		Fahrzeug f1 = new VerbrennungsMotor(1);
+		Fahrzeug f2 = new VerbrennungsMotor(2);
 		Fahrzeug f3 = new Elektromotor(3);
 		Fahrzeug f4 = new Elektromotor(4);
 		

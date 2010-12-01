@@ -66,6 +66,15 @@ public class FuhrparkUtil {
 		}
 		fp.removeFahrzeugById(fahrzeugID);
 	}
+	/*
+	public static Fahrzeug getFahrzeugFromFuhrparkList(List fuhrparks , int fahrzeugId){
+		Iter iter = fuhrparks.getIterator();
+		while(iter.hasNext()){
+			Fuhrpark next = (Fuhrpark)iter.next();
+//			if(next.getFahrzeug(fahrzeugId) != null) return next.getFahrzeug(fahrzeugId);
+			
+		}
+	}*/
 	
 	//TODO: aendern der information zu einigen fahrzeugen
 	//info: zu einem zeitpunkt wird ein fahrzeug fuer hoechstens 1 art von aufgabe eingesetzt

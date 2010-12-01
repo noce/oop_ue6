@@ -54,6 +54,22 @@ class List {
 		}
 	}
 	
+	public Fahrzeug getNodeById(Object id){
+		Node prevNode = head;
+		Node thisNode = head;
+		boolean check = true;
+
+		while(prevNode.next != null && check == true){
+
+			if(thisNode.elem.getId().equals(id)){
+				return (Fahrzeug) thisNode.elem;
+			}
+			prevNode = thisNode;
+			thisNode = thisNode.next;
+		}
+		return null;
+	}
+	
 	public String toString(){
 		return "";
 	}
