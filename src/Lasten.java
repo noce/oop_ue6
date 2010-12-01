@@ -15,6 +15,10 @@ public class Lasten implements Befoerderung{
 		return "Lasten";
 	}
 	
+	public int getMaxWeight(){
+		return maxWeight;
+	}
+	
 	public int getSize(){
 		return sizeOfLoadingSpace;
 	}
