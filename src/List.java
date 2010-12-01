@@ -71,6 +71,11 @@ class List {
 	}
 	
 	public String toString(){
-		return "";
+		StringBuffer ret = new StringBuffer();
+		Iter iter = this.getIterator();
+		while(iter.hasNext()){
+			ret.append(iter.next());
+		}
+		return ret.toString();
 	}
 }
