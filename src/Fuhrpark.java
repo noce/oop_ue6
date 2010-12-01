@@ -117,18 +117,15 @@ public class Fuhrpark implements IdAdmin{
 			avgVerbrauch = verbrauch/km;
 			ret.append("Durchschnittlicher Verbrauch/km: " + avgVerbrauch);
 			ret.append("\n");
-			ret.append("Liter");
 
 			avgLasten = verbrauchLasten/kmLasten;
 			ret.append("Durchschnittlicher Verbrauch/km fuer Lastentransporter: " + avgLasten);
 			ret.append("\n");
-			ret.append("Liter");
 
 			avgPersonen = verbrauchPersonen/kmPersonen;
 			ret.append("Durchschnittlicher Verbrauch/km fuer Personentransporter: " + avgPersonen);
 			ret.append("\n");
 			ret.append("\n");
-			ret.append("Liter");
 
 			break;
 		}//end case1
@@ -162,18 +159,18 @@ public class Fuhrpark implements IdAdmin{
 			avgVerbrauch = verbrauch/km;
 			ret.append("Durchschnittlicher Verbrauch/km: " + avgVerbrauch);
 			ret.append("\n");
-			ret.append("kw/h");
+
 
 			avgLasten = verbrauchLasten/kmLasten;
 			ret.append("Durchschnittlicher Verbrauch/km fuer Lastentransporter: " + avgLasten);
 			ret.append("\n");
-			ret.append("kw/h");
+
 
 			avgPersonen = verbrauchPersonen/kmPersonen;
 			ret.append("Durchschnittlicher Verbrauch/km fuer Personentransporter: " + avgPersonen);
 			ret.append("\n");
 			ret.append("\n");
-			ret.append("kw/h");
+
 			
 			break;
 		}//end case2
@@ -219,17 +216,14 @@ public class Fuhrpark implements IdAdmin{
 
 			ret.append("Durchschnittliche Anzahl der Sitzplaetze pro Fahrzeug: " + avgSeats);
 			ret.append("\n");
-			ret.append("Sitzplaetze");
 
 			avgSeatsV = seatsV/countV;
 			ret.append("Durchschnittliche Anzahl der Sitzplaetze pro Fahrzeug bei Verbrennerfahrzeugen: " + avgSeatsV);
 			ret.append("\n");
-			ret.append("Sitzplaetze");
 
 			avgSeatsE = seatsE/countE;
 			ret.append("Durchschnittliche Anzahl der Sitzplaetze pro Fahrzeug bei Elektrofahrzeugen: " + avgSeatsE);
 			ret.append("\n");
-			ret.append("Sitzplaetze");
 
 			break;
 		}//end case3
@@ -276,17 +270,16 @@ public class Fuhrpark implements IdAdmin{
 
 			ret.append("Durchschnittliche Groesse der Ladeflaeche: " + avgLoad);
 			ret.append("\n");
-			ret.append("qm");
+
 
 			avgLoadV = loadV/countV;
 			ret.append("Durchschnittliche Groesse der Ladeflaeche bei Verbrennerfahrzeugen: " + avgLoadV);
 			ret.append("\n");
-			ret.append("qm");
 
 			avgLoadE = loadE/countE;
 			ret.append("Durchschnittliche Anzahl der Sitzplaetze pro Fahrzeug bei Elektrofahrzeugen: " + avgLoadE);
 			ret.append("\n");
-			ret.append("Sitzplaetze");
+
 
 			break;
 
