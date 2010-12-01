@@ -18,7 +18,7 @@ public class Test {
 	private static void printFuhrparkListe(List fuhrparks){
 		Iter iter = fuhrparks.getIterator();
 		while(iter.hasNext()){
-			System.out.println(iter.next());
+			System.out.println(iter.next().toString());
 		}
 	}
 
@@ -30,9 +30,7 @@ public class Test {
 		 * -aendern der Informationen zu einzelnen Fahrzeugen
 		 * -statistische Werte aller Fuhrparks berechenen
 		 */
-		
-		
-		
+
 		
 		/*
 		 * neue fuhrparks erstellen
@@ -80,6 +78,7 @@ public class Test {
 		System.out.println("Folgende Fuhrparks sind vorhanden:");
 		printFuhrparkListe(fuhrparks);
 		
+		FuhrparkUtil.deleteFuhrpark(fuhrparks, fuhrpark1);
 		FuhrparkUtil.deleteFuhrpark(fuhrparks, fuhrpark5);
 		System.out.println("Nach Entfernen von Fuhrpark 5 und 1 sind noch folgende Fuhrparks vorhanden:");
 		printFuhrparkListe(fuhrparks);
@@ -95,6 +94,7 @@ public class Test {
 		 * Erhoehung und Auslesung des Kilometerstandes eines Fahrzeugs
 		 */
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 6).increaseKm(220);
+		
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 6).increaseKm(80);
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 7).increaseKm(600);
 		FuhrparkUtil.getFahrzeugFromFuhrparkList(fuhrparks, 8).increaseKm(900);
