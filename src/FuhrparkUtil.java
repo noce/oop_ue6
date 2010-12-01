@@ -58,6 +58,7 @@ public class FuhrparkUtil {
 	/*
 	 * delete specified Fahrzeug
 	 */
+	//TODO: ev. noch exc schmeissen falls fahrzeugID nicht vorhanden bzw. schon geloescht
 	public static void deleteFahrzeug(List fuhrparks, String fuhrparkID, int fahrzeugID) throws IllegalArgumentException{
 		Fuhrpark fp = findFuhrparkID(fuhrparks, fuhrparkID);
 		if(fuhrparkID == null){
@@ -67,4 +68,20 @@ public class FuhrparkUtil {
 	}
 	
 	//TODO: aendern der information zu einigen fahrzeugen
+	//info: zu einem zeitpunkt wird ein fahrzeug fuer hoechstens 1 art von aufgabe eingesetzt
+	public static void changeFunction(List fuhrparks, int fahrzeugID){
+		//fahrzeug setType()
+	}
+	
+	//TODO: erhoehung d kilometerstandes
+	public static void increaseKm(int fahrzeugID, int km){
+		//verwende methoden von fahrzeug
+	}
+	
+	//TODO: erhoehung d Treibstoff- /Stromverbrauchs (liter bzw. kwh)
+	public static void increaseFuelConsumption(List fuhrparks, int fahrzeugID, int amount){
+		
+	}
+	
+	
 }
