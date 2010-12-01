@@ -75,7 +75,7 @@ public class Fuhrpark implements IdAdmin{
 
 		switch(i){
 		case 1:{
-			ret.append("Fall 1: Treibstoffverbrauch pro Kilometer mit Verbrennungskraftwï¿½gen: ");
+			ret.append("Fall 1: Treibstoffverbrauch pro Kilometer mit Verbrennungskraftwagen: ");
 			ret.append("\n");
 			double verbrauch = 0;
 			double km = 0;
@@ -106,18 +106,18 @@ public class Fuhrpark implements IdAdmin{
 			ret.append("\n");
 
 			avgLasten = verbrauchLasten/kmLasten;
-			ret.append("Durchschnittlicher Verbrauch/km fï¿½r Lastentransporter: " + avgLasten);
+			ret.append("Durchschnittlicher Verbrauch/km fuer Lastentransporter: " + avgLasten);
 			ret.append("\n");
 
 			avgPersonen = verbrauchPersonen/kmPersonen;
-			ret.append("Durchschnittlicher Verbrauch/km fï¿½r Personentransporter: " + avgPersonen);
+			ret.append("Durchschnittlicher Verbrauch/km fuer Personentransporter: " + avgPersonen);
 			ret.append("\n");
 			ret.append("\n");
 
 			break;
 		}//end case1
 		case 2:{
-			ret.append("Fall 2: Treibstoffverbrauch pro Kilometer mit Elektrokraftwï¿½gen: ");
+			ret.append("Fall 2: Treibstoffverbrauch pro Kilometer mit Elektrokraftwagen: ");
 			ret.append("\n");
 			double verbrauch = 0;
 			double km = 0;
@@ -148,11 +148,11 @@ public class Fuhrpark implements IdAdmin{
 			ret.append("\n");
 
 			avgLasten = verbrauchLasten/kmLasten;
-			ret.append("Durchschnittlicher Verbrauch/km fï¿½r Lastentransporter: " + avgLasten);
+			ret.append("Durchschnittlicher Verbrauch/km fuer Lastentransporter: " + avgLasten);
 			ret.append("\n");
 
 			avgPersonen = verbrauchPersonen/kmPersonen;
-			ret.append("Durchschnittlicher Verbrauch/km fï¿½r Personentransporter: " + avgPersonen);
+			ret.append("Durchschnittlicher Verbrauch/km fuer Personentransporter: " + avgPersonen);
 			ret.append("\n");
 			ret.append("\n");
 
@@ -213,7 +213,7 @@ public class Fuhrpark implements IdAdmin{
 		}//end case3
 
 		case 4:{
-			ret.append("Fall 3: Durchschnittliche Grï¿½ï¿½e der Ladeflï¿½che pro Fahrzeug ");
+			ret.append("Fall 3: Durchschnittliche Groesse der Ladeflaeche pro Fahrzeug ");
 			ret.append("\n");
 			Fahrzeug tmpF;
 			Iter itE = elektro.getIterator();
@@ -252,11 +252,11 @@ public class Fuhrpark implements IdAdmin{
 			count = countE + countV;
 			avgLoad = load/count;
 
-			ret.append("Durchschnittliche Grï¿½ï¿½e der Ladeflï¿½che: " + avgLoad);
+			ret.append("Durchschnittliche Groesse der Ladeflaeche: " + avgLoad);
 			ret.append("\n");
 
 			avgLoadV = loadV/countV;
-			ret.append("Durchschnittliche Grï¿½ï¿½e der Ladeflï¿½che bei Verbrennerfahrzeugen: " + avgLoadV);
+			ret.append("Durchschnittliche Groesse der Ladeflaeche bei Verbrennerfahrzeugen: " + avgLoadV);
 			ret.append("\n");
 
 			avgLoadE = loadE/countE;
@@ -282,7 +282,7 @@ public class Fuhrpark implements IdAdmin{
 			countE++;
 		}
 		ret.append(countE + "x");
-		ret.append("Elektrokraftwägen: " + "\n");
+		ret.append("Elektrokraftwaegen: " + "\n");
 		while(iterV.hasNext()){
 			Fahrzeug tempF = (Fahrzeug) iterV.next();
 			countV++;
